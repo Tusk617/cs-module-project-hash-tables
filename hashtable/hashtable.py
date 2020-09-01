@@ -20,8 +20,9 @@ class HashTable:
     Implement this.
     """
 
-    def __init__(self, capacity):
-        # Your code here
+    def __init__(self, capacity=MIN_CAPACITY):
+        self.capacity = capacity
+        self.storage = [None] * self.capacity
 
 
     def get_num_slots(self):
@@ -35,6 +36,9 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        return len(self.storage)
+
+
 
 
     def get_load_factor(self):
@@ -44,7 +48,11 @@ class HashTable:
         Implement this.
         """
         # Your code here
-
+        num_items = 0
+        for i in self.storage:
+            if i != None:
+                num_items += 1
+        return num_items / self.capacity
 
     def fnv1(self, key):
         """
@@ -63,6 +71,12 @@ class HashTable:
         Implement this, and/or FNV-1.
         """
         # Your code here
+        hash = 5381
+        for c in key:
+            hash = (hash * 33) + ord(c)
+        return hash
+
+        
 
 
     def hash_index(self, key):
@@ -82,6 +96,9 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        index = self.hash_index(key)
+
+        self.storage[index] = value
 
 
     def delete(self, key):
@@ -93,7 +110,9 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        index = self.hash_index(key)
 
+        self.storage[index] = None
 
     def get(self, key):
         """
@@ -105,6 +124,10 @@ class HashTable:
         """
         # Your code here
 
+        index = self.hash_index(key)
+
+        return self.storage[index]
+
 
     def resize(self, new_capacity):
         """
@@ -114,6 +137,10 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        # self.capacity = new_capacity
+        self.storage.extend([None] * (new_capacity - self.capacity))
+
+
 
 
 
