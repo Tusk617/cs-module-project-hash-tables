@@ -138,7 +138,7 @@ class HashTable:
         """
         # Your code here
         # self.capacity = new_capacity
-        self.storage.extend([None] * (new_capacity - self.capacity))
+        # self.storage.extend([None] * (new_capacity - self.capacity))
 
 
 
