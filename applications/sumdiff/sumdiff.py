@@ -12,4 +12,15 @@ def f(x):
     return x * 4 + 6
 
 # Your code here
+a=b=c=d=0
 
+a = q[0]
+b = q[1]
+c = q[-1]
+d = q[-2]
+
+print(f(c) - f(d))
+print(f(a) + f(a))
+
+if f(a) + f(a) == f(c) - f(d):
+    print("Yes!")

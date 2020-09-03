@@ -2,16 +2,16 @@ import re
 def word_count(s):
     # Your code here
     cache = {}
-    # newString = s.split()
-    newS = re.sub(r'[^a-zA-Z\W]', ' ', s)
-    newString = newS.split(' ')
-    print(newS)
-    # print(newString)
-    # ignoredChars = ['"', ':', ';', ',', '.', '-', '+', '=', '/', '|', '*', '{', '}', '^', '&', ']', '[']
-    # print(newString)
+    # print(newS)
+    # newString = re.sub('[^a-zA-z/W+]', ' ', s)
+    newString = s.split()
+    print(newString)
+    for word in newString:
+        word = word.isalpha()
+    
     for word in newString:
         word = word.lower()
-        cache[word] = newS.count(word)
+        cache[word] = newString.count(word)
     return cache
     
 
