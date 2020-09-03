@@ -1,5 +1,7 @@
 # Your code here
 import random
+from math import pow
+from math import factorial
 
 def slowfun_too_slow(x, y):
     v = math.pow(x, y)

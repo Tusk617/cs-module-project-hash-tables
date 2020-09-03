@@ -1,14 +1,13 @@
 def no_dups(s):
     # Your code here
+    #if there's nothing in the string just return the string
     if len(s) == 0:
         return s
     words = s.split()
     newWords = []
-
     newS = " "
 
     # print(words[0])
-
 
     for i in words:
         if i not in newWords:
